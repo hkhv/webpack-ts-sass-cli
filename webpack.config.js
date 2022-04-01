@@ -19,13 +19,7 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                    },
-                    'sass-loader?sourceMap'
-                ]
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /.ts$/,
@@ -39,9 +33,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyWebpackPlugin([
-            { from: 'src/assets', to: 'assets' },
-        ]),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'src/assets', to: 'assets' },
+            ]
+        }),
         new HtmlWebpackPlugin({
             template: 'src/sites/cn/index.html',
             inject: 'body',
