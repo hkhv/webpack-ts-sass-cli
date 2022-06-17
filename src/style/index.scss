@@ -1,4 +1,201 @@
 html {
+    background-color: #121212;
+    color: white;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    height: calc(100% - 20px);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#container {
     height: 100%;
     width: 100%;
+}
+
+.loader-box {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loader {
+    color: #ffffff;
+    font-size: 15px;
+    text-indent: -9999em;
+    /* position: absolute; */
+    /* top: calc(30% - 45px);
+    left: calc(50% - 45px); */
+    vertical-align: middle;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: none;
+    /* position: relative; */
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load 1.7s infinite ease, round 1.7s infinite ease;
+}
+
+@-webkit-keyframes load {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+            -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+            -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+            -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@keyframes load {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+            -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+            -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+            -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@-webkit-keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    tbody {
+        td {
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+}
+
+input {
+    border: none;
+    background: #2a2a2a;
+    height: 35px;
+    width: 60%;
+    font-size: 14px;
+    padding: 0 20px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+span,
+label {
+    vertical-align: middle;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+button {
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    width: calc(15%);
+    text-align: center;
+    border: 1px solid #46b069;
+    background: transparent;
+    border-radius: 30px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
+}
+
+button:hover {
+    background: #46b069;
+}
+
+button:focus {
+    outline: none;
 }

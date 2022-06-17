@@ -1,19 +1,30 @@
 
 
 const path = require('path');
+const webpack = require('webpack')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
     mode: "production",
     entry: {
-        "index": "./src/ts/index.ts"
+        "index": "./src/ts/index.ts",
     },
-    devtool: false,
+    devtool: "source-map" ,
+
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: [".ts", ".js"],
+        fallback: {
+            fs: false,
+            stream: false,
+            crypto: false,
+            assert: false,
+            http: false,
+            https: false,
+            url: false,
+            os: false,
+        }
     },
     module: {
         rules: [
@@ -33,6 +44,12 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            Buffer: ['buffer', 'Buffer'],
+        }),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
+          }),
         new CopyWebpackPlugin({
             patterns: [
                 { from: 'src/assets', to: 'assets' },
@@ -50,9 +67,9 @@ module.exports = {
               collapseWhitespace: true,
               keepClosingSlash: true
             },
-            chunks: 'all',
+            chunks: ['index'],
             filename: 'index.html'
-        })
+        }),
     ],
     output: {
         path: path.resolve(__dirname, './dist'),

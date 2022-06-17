@@ -1,0 +1,6 @@
+export const USDT_POOL_NAME = 'USDT Pools'
+export const ETH_POOL_NAME = 'ETH Pools'
+export const MATIC_POOL_NAME = 'MATIC Pools'
+export const FTM_POOL_NAME = 'FTM Pools'
+export const DAI_POOL_NAME = 'DAI Pools'
+export const USDC_POOL_NAME = 'USDC Pools'
