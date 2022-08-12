@@ -10,7 +10,10 @@ import { getEthCall, getPoolAddress, getSendTransactionParams } from './global'
 
 export class PoolService {
     web3 = new Web3()
-    constructor() {}
+    erc20Json: any
+    constructor() {
+        axios.get('./assets/contract-json/ethErc20.json').then((res) => (this.erc20Json = res.data))
+    }
 
     async getRates() {
         return axios.get('https://hub-v2.o3.network/v1/crypto/rates').then((response) => {
@@ -119,8 +122,7 @@ export class PoolService {
         }
         let params: any[]
         let method = 'eth_call'
-        const json = await axios.get('./assets/contract-json/ethErc20.json').then((res) => res.data)
-        const ethErc20Contract = new this.web3.eth.Contract(json, tokenAssetId)
+        const ethErc20Contract = new this.web3.eth.Contract(this.erc20Json, tokenAssetId)
         const data = await ethErc20Contract.methods.balanceOf(address).encodeABI()
         params = [getSendTransactionParams(address, tokenAssetId, data), 'latest']
         return {

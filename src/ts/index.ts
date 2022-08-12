@@ -144,8 +144,13 @@ function sort() {
     initTable()
 }
 
-init()
-initData()
-setInterval(() => {
-    initData()
-}, 30000)
+function main() {
+    setTimeout(() => {
+        init()
+        initData()
+        // setInterval(() => {
+        //     // initData()
+        // }, 30000)
+    }, 1000)
+}
+main()
