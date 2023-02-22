@@ -1,4 +1,78 @@
 html {
-    height: 100%;
+    background-color: #121212;
+    color: white;
     width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    height: calc(100% - 20px);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.date-box {
+    margin-bottom: 20px;
+}
+#date {
+    border: 1px solid #46b069;
+}
+
+button,
+.input-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    width: 150px;
+    text-align: center;
+    border: 1px solid #46b069;
+    background: transparent;
+    border-radius: 30px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
+}
+
+button:hover,
+.input-btn:hover {
+    background: #46b069;
+}
+
+button:focus {
+    outline: none;
+}
+
+.file-box p {
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+
+table {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background: #202020;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+table td {
+    height: 20px;
+}
+
+#refund-input,
+#sales-input,
+#ad-input,
+#result-input {
+    display: none;
 }

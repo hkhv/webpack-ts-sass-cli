@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    hello world
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <!-- <script lang="javascript" src="/assets/js-xlsx-dist/cpexcel.js"></script>
+    <script lang="javascript" src="/assets/js-xlsx-dist/ods.js"></script> -->
+    <script lang="javascript" src="./assets/xlsx-js-style/xlsx.bundle.js"></script>
+    <body>
+        <div class="date-box">
+            <label>日期</label>
+            <input type="date" id="date" />
+        </div>
+
+        <div class="file-box">
+            <label class="input-btn" for="refund-input">选择退款文件</label>
+            <input id="refund-input" type="file" value="导入csv" />
+            <p id="refund-input-name"></p>
+        </div>
+        <div class="file-box">
+            <label class="input-btn" for="sales-input">选择销售额文件</label>
+            <input id="sales-input" type="file" value="导入txt" />
+            <p id="sales-input-name"></p>
+        </div>
+        <div class="file-box">
+            <label class="input-btn" for="ad-input">选择广告文件</label>
+            <input id="ad-input" type="file" value="导入xlsx" />
+            <p id="ad-input-name"></p>
+        </div>
+        <div class="file-box">
+            <label class="input-btn" for="result-input">选择总表文件</label>
+            <input id="result-input" type="file" value="导入xlsx" />
+            <p id="result-input-name"></p>
+        </div>
+        <button id="export">导出</button>
+        <!-- <table id="display-table"></table> -->
+    </body>
 </html>

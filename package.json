@@ -26,5 +26,9 @@
         "webpack": "^5.70.0",
         "webpack-cli": "^4.9.2",
         "webpack-dev-server": "^4.7.4"
+    },
+    "dependencies": {
+        "bignumber.js": "^9.1.1",
+        "xlsx-style": "^0.8.13"
     }
 }
